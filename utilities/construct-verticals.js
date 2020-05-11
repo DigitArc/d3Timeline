@@ -20,6 +20,7 @@ const constructForYearVertical = (mainSvg, nthMonthOfYear) => {
     month.attr("x1", 62 + monthCounter * 62);
     month.attr("x2", 62 + monthCounter * 62);
     month.attr("y2", 245);
+
     const monthCircle = monthG.append("circle").classed("cls-3", true);
     monthCircle.attr("cx", 62 + monthCounter * 62);
     monthCircle.attr("cy", 120.5);

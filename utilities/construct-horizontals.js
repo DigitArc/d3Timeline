@@ -27,8 +27,16 @@ const constructHorizontalsMonth = (mainSvg, nthDayOfYear) => {
         .classed("cls-3", true)
         .attr("x1", 62 + (monthCounter * 62) / 31)
         .attr("x2", 62 + (monthCounter * 62) / 31)
+        .attr("y2", 122)
+        .style("stroke", "url(#linear-gradient-top)");
+      monthG
+        .append("line")
+        .classed("cls-3", true)
+        .attr("x1", 62 + (monthCounter * 62) / 31)
+        .attr("x2", 62 + (monthCounter * 62) / 31)
+        .attr("y1", 122)
         .attr("y2", 245)
-        .style("stroke", 4);
+        .style("stroke", "url(#linear-gradient-bottom)");
     }
     monthCounter++;
   }

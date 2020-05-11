@@ -29068,7 +29068,8 @@ const constructHorizontalsMonth = (mainSvg, nthDayOfYear) => {
     }
 
     if (nthDayOfYear === monthCounter) {
-      monthG.append("line").classed("cls-3", true).attr("x1", 62 + monthCounter * 62 / 31).attr("x2", 62 + monthCounter * 62 / 31).attr("y2", 245).style("stroke", 4);
+      monthG.append("line").classed("cls-3", true).attr("x1", 62 + monthCounter * 62 / 31).attr("x2", 62 + monthCounter * 62 / 31).attr("y2", 122).style("stroke", "url(#linear-gradient-top)");
+      monthG.append("line").classed("cls-3", true).attr("x1", 62 + monthCounter * 62 / 31).attr("x2", 62 + monthCounter * 62 / 31).attr("y1", 122).attr("y2", 245).style("stroke", "url(#linear-gradient-bottom)");
     }
 
     monthCounter++;
@@ -29098,6 +29099,9 @@ const today = new Date();
 const nthDayOfYear = today.getDate() + today.getMonth() * 31;
 (0, _constructVerticals.constructVerticals)("year", mainSvg, today.getMonth());
 (0, _constructHorizontals.constructHorizontals)("year", mainSvg, nthDayOfYear);
+d3.selectAll(".cls-3").style("opacity", 0).style("transform", "translateY(10px)").transition().duration(1000).style("opacity", 1).style("transform", "translateY(0)");
+d3.selectAll(".cls-1").style("opacity", 0).style("transform", "translateY(10px)").transition().duration(1000).style("opacity", 0.4).style("transform", "translateY(0)");
+d3.selectAll(".cls-6").style("opacity", 0).transition().duration(1000).style("opacity", 1);
 },{"d3":"node_modules/d3/index.js","./utilities/construct-verticals":"utilities/construct-verticals.js","./utilities/construct-horizontals":"utilities/construct-horizontals.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -29126,7 +29130,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49399" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63469" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

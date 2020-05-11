@@ -15,3 +15,25 @@ const nthDayOfYear = today.getDate() + today.getMonth() * 31;
 
 constructVerticals("year", mainSvg, today.getMonth());
 constructHorizontals("year", mainSvg, nthDayOfYear);
+
+d3.selectAll(".cls-3")
+  .style("opacity", 0)
+  .style("transform", "translateY(10px)")
+  .transition()
+  .duration(1000)
+  .style("opacity", 1)
+  .style("transform", "translateY(0)");
+
+d3.selectAll(".cls-1")
+  .style("opacity", 0)
+  .style("transform", "translateY(10px)")
+  .transition()
+  .duration(1000)
+  .style("opacity", 0.4)
+  .style("transform", "translateY(0)");
+
+d3.selectAll(".cls-6")
+  .style("opacity", 0)
+  .transition()
+  .duration(1000)
+  .style("opacity", 1);
